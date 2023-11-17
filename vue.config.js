@@ -6,6 +6,14 @@ function resolveSrc(_path) {
 }
 
 module.exports = {
+  outputDir: "../src/main/resources/static",  
+  devServer: {
+    proxy: {
+      '/': {
+        target: 'http://localhost:8081'
+      }
+    }
+  },
   lintOnSave: false,
   configureWebpack: {
     // Set up all the aliases we use in our app.

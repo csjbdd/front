@@ -16,9 +16,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
-
+import axios from 'axios';
 // LightBootstrap plugin
 import LightBootstrap from "./light-bootstrap-main";
+import moment from "moment";
+
 
 // router setup
 import routes from "./routes/routes";
@@ -27,6 +29,10 @@ import "./registerServiceWorker";
 // plugin setup
 Vue.use(VueRouter);
 Vue.use(LightBootstrap);
+Vue.use(axios);
+Vue.use(moment);
+Vue.prototype.$moment = moment
+Vue.prototype.$axios = axios
 
 // configure router
 const router = new VueRouter({
